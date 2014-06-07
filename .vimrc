@@ -48,7 +48,7 @@ Bundle "gmarik/vundle"
 Bundle "vim-scripts/taglist.vim"
 Bundle "vim-scripts/DoxygenToolkit.vim"
 Bundle "vim-scripts/grep.vim"
-
+Bundle "vim-scripts/bufkill.vim"
 "
 " 行番号を表示する
 set number
