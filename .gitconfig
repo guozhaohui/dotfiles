@@ -7,6 +7,9 @@
 	br = branch
 	ci = commit
 	st = status
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	tr = log --oneline --decorate --all --graph
+	diff1 = diff --no-prefix --relative
 [user]
 	name = guozhaohui
 	email = guo.zhaohui@gmail.com
