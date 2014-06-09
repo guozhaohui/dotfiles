@@ -151,3 +151,36 @@ function cvsup() {
       cvs co -d $1 $repo_dir_path
    fi
 }
+
+#------------------------------
+#カレントtermを対象となるps
+#freebsd環境では、デフォルトはuserのすべてのプロセスを表示する
+#--------------------------------
+function pss(){
+  term_num=`tty | sed s#/dev/pts/##`
+  ps -t $term_num
+}
+
+function git_clone() {
+   echo Retrieving source code........
+   echo BASE   : $1  
+   echo BRANCH : $2
+   echo -n "Is it OK to clone these version? : (y/n)"
+   read ans
+   if [ $ans != "y" ];then
+	     exit 0
+   fi
+
+   echo
+
+   git clone ssh://guo.zhaohui@github.com//$1 newarch
+   cd newarch
+   git checkout -b $2 origin/$2
+}
+nx=( TEST-src TEST-branch )
+
+alias git_nx="git_clone ${nx[@]}"
+
+
+
+
