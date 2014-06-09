@@ -7,32 +7,32 @@ alias vi="vim"
 alias vundle_inst="git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
 
 #------------------------------
-#Usage: 
+#Usage:
 # hex2dec 0xdb6a
 #--------------------------------
 function hex2dec(){
-	printf "%d\n" $1	
+    printf "%d\n" $1
 }
 
 function dec2hex(){
-	printf "0x%x\n" $1	
+    printf "0x%x\n" $1
 }
 
 #------------------------------
-#Usage: 
+#Usage:
 # date2timet 2012-08-28
 # date2timet '2012-08-28 00:00:05'
 #--------------------------------
 function date2timet(){
-	date -d "$1" +%s	
+    date -d "$1" +%s
 }
 
 #------------------------------
-#Usage: 
+#Usage:
 # timet2date 1346338800
 #--------------------------------
 function timet2date(){
-    date -d @$1 +'%Y/%m/%d (%a) %H:%M:%S'	
+    date -d @$1 +'%Y/%m/%d (%a) %H:%M:%S'
 }
 
 
@@ -40,8 +40,8 @@ function timet2date(){
 # 環境変数MAKETOP設定
 #==============================================================================
 function set_maketop_pwd() {
-	export MAKETOP=`pwd`
-	export CROSS_C_ROOT_PATH=${MAKETOP}	
+    export MAKETOP=`pwd`
+    export CROSS_C_ROOT_PATH=${MAKETOP}
 }
 
 function set_maketop_cur() {
@@ -57,28 +57,28 @@ function set_maketop_cur() {
 exclude_list="--exclude='*.lo' --exclude='*.o' --exclude='*.am' --exclude='*.in' --exclude='*.la' --exclude='*.lsp' --exclude='*tags' --exclude='XTAGS'"
 #------------------------------
 # タグファイル生成汎用コマンド
-#Usage: 
+#Usage:
 # tags_new dir_name  tag_file_name
 #--------------------------------
 function tags_new() {
     if [ $# -eq 0 ]; then
-	ctags -f ./.tags -R . $exclude_list
+       ctags -f ./.tags -R . $exclude_list
     else
-	ctags -f $2 -R $1 $exclude_list
+       ctags -f $2 -R $1 $exclude_list
     fi
 }
 
 #------------------------------
 # タグファイルに関連ソースコードのフォルダを追加します
-#Usage: 
+#Usage:
 # tags_append dir_name  tag_file_name
 #--------------------------------
 function tags_append() {
     if [ ! -e $2 ]; then
-	    echo -n -e "can NOT find $2 to append tags information\n"
-	    echo 'exit 1'
-	    return 1 
-    fi 
+        echo -n -e "can NOT find $2 to append tags information\n"
+        echo 'exit 1'
+        return 1
+    fi
     ctags -a --tag-relative=yes -f $2 -R $1 $exclude_list
 }
 
@@ -92,7 +92,7 @@ alias  set_mycvs='export CVSROOT=/opt/disc1/kaku/work/MY_CVS'
 #CVSコマンドの拡張。
 #=======================================
 alias cvsdiff='cvs diff -u -kk'
-#------------------------------ 
+#------------------------------
 # CVSフォルダ内の情報を利用して、ログインする。
 #--------------------------------
 function cvslogin() {
@@ -107,14 +107,14 @@ function cvslogin() {
 
 #------------------------------
 #DIRのCVS情報を出力
-#Usage: 
+#Usage:
 # cvsinfo
 #--------------------------------
 function cvsinfo() {
    tag_info=""
    if [ ! -e ./CVS/Repository ]; then
-		echo 'Can NOT find CVS folder. Exit 1'
-		return 1
+      echo 'Can NOT find CVS folder. Exit 1'
+      return 1
    fi
    repo_dir_path=`cat ./CVS/Repository`
    if [ -e ./CVS/Tag ]; then
@@ -127,20 +127,20 @@ function cvsinfo() {
 
 #------------------------------
 #フォルダをバックアップしてから、CVSリポジトリから取り直し
-#Usage: 
+#Usage:
 # cvsup setting
 #  settingフォルダ名をsetting_bakに変更して、CVSから取り直し
 #--------------------------------
 function cvsup() {
    tag_info=""
    if [ ! -e $1/CVS/Repository ]; then
-		echo 'Can NOT find CVS folder. Exit 1'
-		return 1
+      echo 'Can NOT find CVS folder. Exit 1'
+      return 1
    fi
    repo_dir_path=`cat $1/CVS/Repository`
    if [ -e $1/CVS/Tag ]; then
       tag_info=`cat $1/CVS/Tag`
-	  tag_info=`echo $tag_info |  sed -e 's/^T//'`
+      tag_info=`echo $tag_info |  sed -e 's/^T//'`
    fi
 
    mv $1 $1_bak
@@ -163,7 +163,7 @@ function pss(){
 
 function git_clone() {
    echo Retrieving source code........
-   echo BASE   : $1  
+   echo BASE   : $1
    echo BRANCH : $2
    echo -n "Is it OK to clone these version? : (y/n)"
    read ans
@@ -180,7 +180,3 @@ function git_clone() {
 nx=( TEST-src TEST-branch )
 
 alias git_nx="git_clone ${nx[@]}"
-
-
-
-

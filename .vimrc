@@ -32,9 +32,9 @@ set fileformats=unix,dos,mac
 "
 
 " vimdiff 色設定
- hi DiffAdd    ctermfg=black ctermbg=2  
- hi DiffChange ctermfg=black ctermbg=3  
- hi DiffDelete ctermfg=black ctermbg=6  
+ hi DiffAdd    ctermfg=black ctermbg=2
+ hi DiffChange ctermfg=black ctermbg=3
+ hi DiffDelete ctermfg=black ctermbg=6
  hi DiffText   ctermfg=black ctermbg=7"
 
 " ターミナルでマウスを使用できるようにする
