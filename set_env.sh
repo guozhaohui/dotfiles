@@ -6,6 +6,10 @@ alias ll="ls -la"
 alias vi="vim"
 alias vundle_inst="git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
 
+#------------------------------
+#Usage: 
+# hex2dec 0xdb6a
+#--------------------------------
 function hex2dec(){
 	printf "%d\n" $1	
 }
@@ -14,10 +18,19 @@ function dec2hex(){
 	printf "0x%x\n" $1	
 }
 
+#------------------------------
+#Usage: 
+# date2timet 2012-08-28
+# date2timet '2012-08-28 00:00:05'
+#--------------------------------
 function date2timet(){
 	date -d "$1" +%s	
 }
 
+#------------------------------
+#Usage: 
+# timet2date 1346338800
+#--------------------------------
 function timet2date(){
     date -d @$1 +'%Y/%m/%d (%a) %H:%M:%S'	
 }
