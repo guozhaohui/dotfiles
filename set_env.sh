@@ -5,6 +5,9 @@ export CLASSPATH=$CLASSPATH:/usr/share/java/*
 alias ll="ls -la"
 alias la="ls -a"
 alias vi="vim"
+alias vie='vim -c "Explore"'
+alias cpy='cp --preserve'
+alias mvv='mv --backup=numbered'
 alias vundle_inst="git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
 alias c='cygstart'
 alias e='cygstart .'
