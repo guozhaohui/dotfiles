@@ -3,9 +3,14 @@ export CLASSPATH=$CLASSPATH:/usr/share/java/*
 
 # User specific aliases and functions
 alias ll="ls -la"
+alias la="ls -a"
 alias vi="vim"
+alias vie='vim -c "Explore"'
+alias cpy='cp --preserve'
+alias mvv='mv --backup=numbered'
 alias vundle_inst="git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
-
+alias c='cygstart'
+alias e='cygstart .'
 #------------------------------
 #Usage:
 # hex2dec 0xdb6a
