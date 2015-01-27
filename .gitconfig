@@ -17,6 +17,7 @@
 	st = status
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
 	tr = log --oneline --decorate --all --graph
+	tr1 = log --decorate --all --graph
 	diff1 = diff --no-prefix --relative
 [user]
 	name = guozhaohui
