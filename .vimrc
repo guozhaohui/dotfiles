@@ -35,8 +35,12 @@ set fileformats=unix,dos,mac
  hi DiffAdd    ctermfg=black ctermbg=2
  hi DiffChange ctermfg=black ctermbg=3
  hi DiffDelete ctermfg=black ctermbg=6
- hi DiffText   ctermfg=black ctermbg=7"
-
+ hi DiffText   ctermfg=black ctermbg=7
+ highlight Pmenu ctermfg=black ctermbg=3
+ highlight PmenuSel ctermfg=black ctermbg=3
+ hi clear SpellBad
+ hi SpellBad cterm=underline
+ 
 " ターミナルでマウスを使用できるようにする
 "set mouse=a
 filetype off                   " required!
@@ -120,7 +124,7 @@ set cursorline
 set lazyredraw
 
 " コマンド入力欄の高さを3行分に設定
-set cmdheight=3
+set cmdheight=1
 
 " 常にステータスラインを表示
 set laststatus=2
@@ -256,4 +260,7 @@ let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_temporary_directory = $VIM.'/.vimshell'
 let g:vimshell_enable_smart_case = 1
 
+let Grep_Default_Filelist = '*.c *.cpp *.h *.lisp Makefile Makefile.in Makefile.am    '
+let Grep_Skip_Files = '*.bak *~ *.a *.o *.lsp'
+let Grep_Skip_Dirs = '.tmp'
 
