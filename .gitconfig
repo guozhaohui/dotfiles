@@ -24,3 +24,4 @@
 	email = guo.zhaohui@gmail.com
 [merge]
 	tool = vimdiff
+	conflictstyle = diff3
