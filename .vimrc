@@ -42,7 +42,9 @@ set fileformats=unix,dos,mac
  hi SpellBad cterm=underline
  
 " ターミナルでマウスを使用できるようにする
-"set mouse=a
+set mouse=a
+set ttymouse=xterm2
+
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -147,7 +149,7 @@ match ZenkakuSpace /　/
 " タブ幅設定
 set tabstop=4 shiftwidth=4 softtabstop=0
 " タブを空白に変換しない
-set noexpandtab
+set expandtab
 
 " .jsのみタブ幅とタブを空白にする設定
 au BufNewFile,BufRead *.js set expandtab tabstop=8 shiftwidth=4
@@ -226,10 +228,10 @@ set smartindent
 "---------------------------------------------------------------------------
 " Key-mappings "{{{
 "
-map <F2>  :set tags=.tags<CR>
 map <F3>  :Rgrep<CR>
 map <F5>  :sh<CR>
 map <F6>  :make install<CR>
+nnoremap * *``
 
 "---------------------------------------------------------------------------
 " abbr "{{{
