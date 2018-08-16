@@ -30,6 +30,7 @@ set fileformats=unix,dos,mac
 
 " View "{{{
 "
+set background=dark
 
 " vimdiff 色設定
  hi DiffAdd    ctermfg=black ctermbg=2
@@ -56,7 +57,6 @@ Bundle "vim-scripts/DoxygenToolkit.vim"
 Bundle "vim-scripts/grep.vim"
 Bundle "vim-scripts/bufkill.vim"
 Bundle "vim-scripts/a.vim"
-Bundle "vim-scripts/cscope.vim"
 "
 " 行番号を表示する
 set number
